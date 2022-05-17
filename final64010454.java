@@ -1,11 +1,8 @@
 import java.io.*;
-//import java.util.Scanner;  
+import java.util.Scanner;  
 
 interface In1 {
     
-    
-    final int a = 10;
-  
     void display();
 }
 
@@ -20,39 +17,54 @@ class TestClass implements In1 {
 
     public static void main(String[] args)
     {
-      //Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+      Scanner myObj = new Scanner(System.in);  // Create a Scanner object
       //System.out.println("Enter name of sudent");
       //String studentname = myObj.nextLine();  // Read user input
         TestClass t = new TestClass();
         t.display();
-        System.out.println(a);
+        
         people obj = new student();  
-        obj.run();  
-        obj.changeGear();  
-        student5 s1 = new student5(1111, "ssss");
+          
+       
+        student5 s1 = new student5("ssss");
           s1.display();  
 
     Students s=new Students();  
             s.setName("vijay");  
 
         System.out.println(s.getName());  
+        System.out.println("Enter Id of sudent");
+      int id = myObj.nextInt();  // Read user input
+      obj.run(id);
+        try {
+          System.out.println(id * 100);
+        } catch (Exception e) {
+          System.out.println("Something went wrong.");
+        }
    
     }
 }
 abstract class people{  
-  people(){System.out.println("bike is created");}  
-    abstract void run();  
-    void changeGear(){System.out.println("gear changed");}  
+ 
+    abstract void run(int i);  
+   
   }  
   class student extends people{  
-    void run(){
+    void run(int i){
      System.out.println("Student");
     }  
     }  
     class  Council extends people {
-      void run(){
-        System.out.println("r unning safely..");
+      void run(int i){
+        i = i;
+        if(i >5)
+        System.out.println("Ms. queer");
+        else
+        System.out.println("Ms. dawk");
+
       }
 }
+    
+ 
     
  
